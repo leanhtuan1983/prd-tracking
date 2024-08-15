@@ -13,7 +13,9 @@
   <link rel="stylesheet" href="{{ asset('assets/css/depMenu.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/table.css') }}">
   <script src="{{ asset('assets/js/status.js')}}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="{{ asset('assets/js/chart.js')}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -37,8 +39,8 @@
         </nav>
         @yield('content')
     </div>
-    <script>
-        // Gọi hàm JavaScript để cập nhật màu nền cho tất cả các element có class 'status-element'
+    <!-- Gọi hàm JavaScript để cập nhật màu nền cho tất cả các element có class 'status-element' -->
+    <script>   
         updateBackgroundColors('status-element');
     </script>
 </body>

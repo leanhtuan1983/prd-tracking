@@ -5,7 +5,19 @@ body {
     background-color: #f4f4f4;
     padding: 20px;
 }
-
+.product-title {
+    display: block;
+    height: 60px;
+    padding-top: 10px;
+    background: greenyellow;
+    text-align: center;
+}
+.table-detail {
+    width: 50%;
+    max-height: 640px;
+    overflow: auto;
+    display: inline-block;
+}
 .table-container {
     width: 100%;
     max-width: 900px;
@@ -59,4 +71,13 @@ body {
 }
 .Completed {
     text-decoration: underline;
+}
+.chartView {
+    display: block;
+    width: 50%;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.filter-data {
+    padding: 20px 180px;
 }
