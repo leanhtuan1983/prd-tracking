@@ -24,6 +24,7 @@ class LotController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'quantity' => 'required|integer',
             'product_id' => 'required|exists:products,id'
         ]);
         Lot::create($request->all());
@@ -40,6 +41,7 @@ class LotController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'quantity' => 'required|integer',
             'product_id' => 'required|exists:products,id'
         ]);
         $lot->update($request->all());

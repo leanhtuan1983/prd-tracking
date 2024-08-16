@@ -19,9 +19,33 @@ document.addEventListener("DOMContentLoaded", function () {
             responsive: true,
             plugins: {
                 legend: {
-                    position: "bottom",
+                    position: "bottom", // Vị trí label
                 },
             },
+            cutout: "50%", // Độ rộng của lỗ donut
         },
+        plugins: [
+            {
+                beforeDraw: function (chart) {
+                    var width = chart.width,
+                        height = chart.height,
+                        ctx = chart.ctx;
+
+                    ctx.restore();
+                    var fontSize = (height / 80).toFixed(2);
+                    ctx.font = fontSize + "em sans-serif";
+                    ctx.textBaseline = "middle";
+
+                    var text = Math.round(completionPercentage) + "%",
+                        textX = Math.round(
+                            (width - ctx.measureText(text).width) / 2
+                        ),
+                        textY = height / 2;
+
+                    ctx.fillText(text, textX, textY);
+                    ctx.save();
+                },
+            },
+        ],
     });
 });

@@ -27,16 +27,16 @@ class FeController extends Controller
     }
    public function showDept($dept_id) {
         // Index các product và status của 1 product tại 1 department 
-    $deptData = Log::where('dept_id',$dept_id)->get();
-    return view('fe.dept.show',compact('deptData'));
+        $deptData = Log::where('dept_id',$dept_id)->get();
+        return view('fe.dept.show',compact('deptData'));
    }
    public function update($id) {
-    // Cập nhật tạng thái mới của product tại department 
-    $record = Log::find($id);
-    if ($record && $record->status_id < 3) {
-        $record->status_id += 1;
-        $record->save();
-        }
+        // Cập nhật tạng thái mới của product tại department 
+        $record = Log::find($id);
+            if ($record && $record->status_id < 3) {
+                $record->status_id += 1;
+                $record->save();
+                }
     return redirect()->back();
     }
 }

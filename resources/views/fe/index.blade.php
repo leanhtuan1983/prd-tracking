@@ -17,6 +17,7 @@
                 <tr>
                     <th>Lot</th>
                     <th>Product</th>
+                    <th>Quantity</th>
                     <th>Procedures</th>
                     <th>Show details</th>
                 </tr>
@@ -26,6 +27,7 @@
                 <tr>
                     <td>{{$log->name}}</td>
                     <td>{{ $log->logs_product->name}}</td>
+                    <td>{{ $log->logs_lot->quantity}}</td>
                     <td>{{ $log->logs_procedure->name}}</td>
                     <td ><a href="{{ route('fe.show',$log->lot_id) }}"><i class="bi bi-eye"></i></a></td>
                 </tr>
@@ -33,6 +35,4 @@
             </tbody>
         </table>
 </div>
-
-
 @endsection

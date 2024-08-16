@@ -18,6 +18,7 @@ function updateBackgroundColors(elementClass) {
 
         // Đặt màu nền mặc định
         var backgroundColor = "transparent";
+        var texColor = "black";
 
         // Cập nhật màu nền dựa trên trạng thái
         switch (status) {
@@ -25,11 +26,10 @@ function updateBackgroundColors(elementClass) {
                 backgroundColor = "orange"; // Màu cam cho trạng thái pending
                 break;
             case "Processing":
-                backgroundColor = "red"; // Màu xanh dương cho trạng thái running
+                backgroundColor = "red"; // Màu đỏ cho trạng thái running
                 break;
             case "Completed":
-                backgroundColor = "green"; // Màu xanh lá cây cho trạng thái finished
-                color = "white";
+                backgroundColor = "green"; // Màu xanh lá cây cho trạng thái completed
                 break;
             default:
                 backgroundColor = "gray"; // Màu xám cho các trạng thái không xác định

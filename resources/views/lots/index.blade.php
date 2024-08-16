@@ -6,7 +6,7 @@
     <ul>
         @foreach($lots as $lot)
             <li>
-                {{ $lot->name }} - (Product: {{ $lot->product->name }})
+                {{ $lot->name }} - (Product: {{ $lot->product->name }}) - Quantity: {{ $lot->quantity}}
                 <a href="{{ route('lots.edit', $lot->id) }}" class="btn btn-secondary">Edit</a>
                 <form action="{{ route('lots.destroy', $lot->id) }}" method="POST" style="display:inline;">
                     @csrf

@@ -6,7 +6,9 @@
         @csrf
         <div class="form-group">
             <label for="name">Lot Code</label>
-            <input type="text" id="name" name="name" class="form-control" required>
+                <input type="text" id="name" name="name" class="form-control" required>
+            <label for="quantity">Quantity</label>
+                <input type="text" id="quantity" name="quantity" class="form-control" required>
         </div>
         <div class="form-group">
             <label for="product_id">Product</label>

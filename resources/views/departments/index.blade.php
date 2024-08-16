@@ -11,9 +11,10 @@
         <form action="{{ route('departments.destroy', $department->id) }}" method="post" style="display:inline;">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn badge-danger">Delete</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
             </form>
     </li>
     @endforeach
 </ul>
+<a class="btn btn-primary" href="{{url()->previous()}}"> Go Back </a>
 @endsection

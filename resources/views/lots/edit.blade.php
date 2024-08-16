@@ -8,6 +8,8 @@
         <div class="form-group">
             <label for="name">Lot Code</label>
             <input type="text" id="name" name="name" class="form-control" value="{{ $lot->name }}" required>
+            <label for="name">Quantity</label>
+            <input type="text" id="quantity" name="quantity" class="form-control" value="{{ $lot->quantity }}" required>
         </div>
         <div class="form-group">
             <label for="category_id">Product</label>
