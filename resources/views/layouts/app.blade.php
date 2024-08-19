@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.bootstrap5.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/depMenu.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/table.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fe.css') }}">
     <script src="{{ asset('assets/js/status.js')}}"></script>
     <script src="{{ asset('assets/js/chart.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -23,28 +24,39 @@
     <script src="https://cdn.datatables.net/2.1.3/js/dataTables.bootstrap5.js"></script>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">DASHBOARD</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('categories.index') }}">Categories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('products.index') }}">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('lots.index') }}">Lots</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('procedures.index') }}">Procedures</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('departments.index') }}">Departments</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('processes.index') }}">Processes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('tracking.index') }}">Input</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('fe.index') }}">Tracking</a></li>
-                    
-                </ul>
+    <div class="container-fluid">
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a> 
+        </div>
+
+        <div id="main">
+            <div class="menu-btn">
+                <button class="openbtn" id="openbtn" onclick="openNav()">☰ Open Sidebar</button>
             </div>
-        </nav>
-        @yield('content')
+           @yield('content')     
+        </div>
     </div>
+    <!-- Hàm đóng/mở sidebar -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("openbtn").classList.add('hidden');
+            }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.getElementById("openbtn").classList.remove('hidden');
+            }
+    </script>
+   
+  
     <!-- Gọi hàm JavaScript để cập nhật màu nền cho tất cả các element có class 'status-element' -->
     <script>   
         updateBackgroundColors('status-element');
     </script>
+
+
 </body>
 </html>

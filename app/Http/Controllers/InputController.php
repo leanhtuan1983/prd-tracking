@@ -27,6 +27,7 @@ class InputController extends Controller
         //  Nếu tồn tại lot hàng trong Database
         if($checkLot) {
             $lotId=$checkLot->id; // Tìm id lot hàng
+            $quantity = $checkLot->quantity; // Tìm số lượng lot hàng
             $productId = $checkLot->product_id; // Tìm id sản phẩm
             $procedureId = Procedure::where('id',$inputProcedure)->first(); // Tìm id quy trình
             // $processIds = Process::where('procedure_id',$procedureId)->get('id');
@@ -36,6 +37,7 @@ class InputController extends Controller
                 $newLog = new Log();
                 $newLog -> name = $checkLot -> name;
                 $newLog -> lot_id = $lotId;
+                $newLog -> quantity = $quantity;
                 $newLog -> product_id = $productId;
                 $newLog -> procedure_id = $procedureId->id;               
                 $newLog -> process_id = $processId->id;

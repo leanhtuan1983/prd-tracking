@@ -4,8 +4,6 @@
 
 @if($deptData->isNotEmpty())
 <div class="product-title"><h1>{{ $deptData[0]->logs_department->name  }}</h1></div>
-
-<div class="container">
     <div class="filter-data">
         <input class="form-control" id="myInput" type="text" placeholder="Search..">
     </div>
@@ -20,7 +18,10 @@
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody id="myTable">        
+        <tbody id="myTable">  
+            @php
+             $previousData = null;
+            @endphp      
         @foreach ($deptData as $deptItem)
             <tr>                  
                 <td>{{ $deptItem -> name }}</td>
@@ -36,7 +37,10 @@
                     </form>
                 </td>                    
             </tr>
-        @endforeach          
+        @endforeach 
+        @php
+            $previousData = $deptItem -> id - 1;
+        @endphp         
         </tbody>
     </table>       
 </div>
@@ -44,7 +48,7 @@
 @else
     <p>Không có dữ liệu để hiển thị.</p>
 @endif
-<a class="btn btn-primary" href="{{url()->previous()}}"> Go Back </a>
+<button onclick="window.location.href='{{ route('fe.index') }}'" class="btn btn-primary">Back to Index</button>
 </div>
 <script>
 $(document).ready(function(){

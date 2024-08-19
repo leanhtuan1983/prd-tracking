@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Categories</h1>
-    <a href="{{ route('categories.create') }}" class="btn btn-primary">Add New Category</a>
-    <ul>
+<div class="container">
+    <div class="action-btn">
+        <a class="btn btn-primary" href="{{ route('fe.index')}}"> Back to Index </a>
+        <a href="{{ route('categories.create') }}" class="btn btn-primary">Add New Category</a>
+    </div>
+    
     <table class="table table-dark table-hover table-sm">
         <thead>
             <tr>
@@ -27,5 +30,5 @@
             @endforeach
         </tbody>
     </table>
-    <a class="btn btn-primary" href="{{url()->previous()}}"> Go Back </a>
+</div>
 @endsection
