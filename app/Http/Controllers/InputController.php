@@ -13,12 +13,9 @@ class InputController extends Controller
 {
     public function index() {
         $logs = Log::with(['logs_lot','logs_product','logs_procedure','logs_process','logs_department','logs_status'])->get();
-        return view('trackings.index', compact('logs'));
-    }
-    public function input(Request $request) {
         $procedures = Procedure::all();
-        return view('trackings.input',compact('procedures',));                   
-        }
+        return view('trackings.index', compact('logs','procedures'));
+    } 
     public function store(Request $request) {
         $inputLot = $request->input('name'); // Nhập tên lot hàng
         $inputProcedure = $request->input('procedure_id'); // Lựa chọn phương thức

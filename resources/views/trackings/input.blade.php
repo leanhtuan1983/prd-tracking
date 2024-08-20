@@ -18,7 +18,4 @@
 </div>
         <button type="submit" class="btn btn-primary">Confirm</button>
 </form>
-<div class="form-group">
-   
-</div>
 @endsection

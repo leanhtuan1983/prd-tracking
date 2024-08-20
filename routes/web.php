@@ -36,7 +36,7 @@ Route::resource('departments', DepartmentController::class);
 
 // Input các data chính để bắt đầu theo dõi
 Route::get('tracking',[InputController::class,'index'])->name('tracking.index');
-Route::get('tracking/input',[InputController::class,'input'])->name('tracking.input');
+// Route::get('tracking/input',[InputController::class,'input'])->name('tracking.input');
 Route::post('tracking/store',[InputController::class,'store'])->name('tracking.store');
 
 // Hiển thị các data đã được input

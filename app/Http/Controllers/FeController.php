@@ -14,7 +14,7 @@ class FeController extends Controller
         $logs = Log::select('lot_id','name','product_id','procedure_id')
         ->groupBy('lot_id','name','product_id','procedure_id')->get();
 
-        // List danh sách các department theo dạng menu
+        // List danh sách các department theo dạng menu ở index
         $subMenus = Department::all();
         return view('fe.index', compact('logs','subMenus'));
     }
@@ -26,9 +26,16 @@ class FeController extends Controller
         return view('fe.show', compact('data','totalData','completeData'));
     }
    public function showDept($dept_id) {
-        // Index các product và status của 1 product tại 1 department 
+        // Index các product và status của product input tại 1 department 
         $deptData = Log::where('dept_id',$dept_id)->get();
-        return view('fe.dept.show',compact('deptData'));
+        $deptProductivity =  Log::where('dept_id',$dept_id)
+                            ->where('status_id','3')
+                            ->sum('quantity');
+        // dd($deptProductivity);
+         // List danh sách các department theo dạng menu ở mỗi dept
+         $subMenu = Department::all();
+        
+        return view('fe.dept.show',compact('deptData','subMenu','deptProductivity'));
    }
    public function update($id) {
         // Cập nhật tạng thái mới của product tại department 

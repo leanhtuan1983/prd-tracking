@@ -1,0 +1,18 @@
+.menuDept {
+    display: flex;
+    background: #000;
+    color: aliceblue;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+}
+.menuDept a {
+    text-decoration: none;
+    padding: 10px;
+    color: aliceblue;
+}
+.menuDeptItem {
+    width: 80px;
+    padding: auto;
+}

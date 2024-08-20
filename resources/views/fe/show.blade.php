@@ -1,5 +1,5 @@
+<!-- HIỂN THỊ THÔNG TIN SẢN PHẨM CHỈ ĐỊNH -->
 @extends('layouts.app')
-
 @section('content')
 <div class="product-title"><h2>LOT: {{ $data[0]->name }} - PRODUCT: {{ $data[0] -> logs_product->name }}</h2></div>
 <div class="container" style="display: flex; padding-top: 20px">

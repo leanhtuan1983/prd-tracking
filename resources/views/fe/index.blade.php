@@ -1,6 +1,13 @@
+<!-- LIỆT KÊ TẤT CẢ CÁC SẢN PHẨM ĐƯỢC INPUT -->
 @extends('layouts.app')
-
 @section('content')
+<div class="menuDept">
+    @foreach ($subMenus as $sub )
+     <div class="menuDeptItem">
+        <a href="{{ route('fe.dept',$sub->id)}}">{{ $sub -> name}}</a>
+     </div>         
+    @endforeach
+</div>
   <table class="product-table">
     <thead>
         <tr>
@@ -22,17 +29,5 @@
         </tr>
         @endforeach              
         </tbody>
-    </table> 
-
-<script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-</script>
+    </table>
 @endsection

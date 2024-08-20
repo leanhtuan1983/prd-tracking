@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.bootstrap5.css" />
-    <link rel="stylesheet" href="{{ asset('assets/css/depMenu.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/deptMenu.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/table.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fe.css') }}">
     <script src="{{ asset('assets/js/status.js')}}"></script>
@@ -27,6 +27,27 @@
     <div class="container-fluid">
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a> 
+            <nav class="navbar bg-dark">
+                <ul class="navbar-nav" style = "width:100%;">
+                    <li class="nav-item dropdown bg-dark">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Database</a>
+                            <div class="dropdown-menu bg-dark -ml-1">
+                                <a class="dropdown-item" href="{{ route('categories.index') }}">Category</a>
+                                <a class="dropdown-item" href="{{ route('products.index') }}">Product</a>
+                                <a class="dropdown-item" href="{{ route('lots.index') }}">Lot</a>
+                                <a class="dropdown-item" href="{{ route('procedures.index') }}">Procedure</a>
+                                <a class="dropdown-item" href="{{ route('departments.index') }}">Department</a>
+                                <a class="dropdown-item" href="{{ route('processes.index') }}">Process</a>
+                            </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('tracking.index') }}">Input</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('fe.index') }}">Tracking</a>
+                    </li>       
+                </ul>
+            </nav>
         </div>
 
         <div id="main">
