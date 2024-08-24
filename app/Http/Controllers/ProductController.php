@@ -11,7 +11,8 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::with('category')->get();
-        return view('products.index', compact('products'));
+        $categories = Category::all();
+        return view('products.index', compact('products','categories'));
     }
 
     public function create()
@@ -25,7 +26,6 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'category_id' => 'required|exists:categories,id',
-            'price' => 'required|numeric'
         ]);
         Product::create($request->all());
         return redirect()->route('products.index')->with('success', 'Product created successfully.');

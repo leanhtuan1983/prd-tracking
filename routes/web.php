@@ -39,6 +39,7 @@ Route::get('tracking',[InputController::class,'index'])->name('tracking.index');
 // Route::get('tracking/input',[InputController::class,'input'])->name('tracking.input');
 Route::post('tracking/store',[InputController::class,'store'])->name('tracking.store');
 
+
 // Hiển thị các data đã được input
 Route::get('fe',[FeController::class,'index'])->name('fe.index');
 Route::get('fe/show/{id}',[FeController::class,'show'])->name('fe.show');

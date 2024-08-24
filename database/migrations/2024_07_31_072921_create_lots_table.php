@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('lots', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('quantity');
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

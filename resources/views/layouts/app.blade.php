@@ -27,11 +27,11 @@
     <div class="container-fluid">
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a> 
-            <nav class="navbar bg-dark">
+            <nav class="navbar">
                 <ul class="navbar-nav" style = "width:100%;">
-                    <li class="nav-item dropdown bg-dark">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Database</a>
-                            <div class="dropdown-menu bg-dark -ml-1">
+                            <div class="dropdown-menu -ml-1">
                                 <a class="dropdown-item" href="{{ route('categories.index') }}">Category</a>
                                 <a class="dropdown-item" href="{{ route('products.index') }}">Product</a>
                                 <a class="dropdown-item" href="{{ route('lots.index') }}">Lot</a>

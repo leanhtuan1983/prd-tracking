@@ -7,6 +7,7 @@
     @foreach ($departments as $department)
     <li>
         {{ $department->name }}
+        {{ $department->target }}
         <a href="{{ route('departments.edit', $department->id) }}" class="btn btn-secondary">Edit</a>
         <form action="{{ route('departments.destroy', $department->id) }}" method="post" style="display:inline;">
             @csrf

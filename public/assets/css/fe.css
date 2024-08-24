@@ -14,23 +14,31 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
 }
+.navbar {
+    margin-left: 40px;
+}
+.dropdown-menu {
+    background-color: transparent;
+    border: none;
+}
 
 .sidebar a {
     padding: 8px 8px 8px 32px;
+    margin: auto;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 20px;
+    color: #f1f1f1;
     display: block;
     transition: 0.3s;
 }
 
 .sidebar a:hover {
-    color: #f1f1f1;
+    color: rgb(0, 162, 255);
 }
 
 .sidebar .closebtn {
@@ -44,7 +52,7 @@ body {
 .openbtn {
     font-size: 20px;
     cursor: pointer;
-    background-color: #111;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     color: white;
     padding: 10px 15px;
     border: none;

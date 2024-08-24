@@ -17,7 +17,8 @@
         <div class="table-container">
             <div class="filter-data">
                 <input class="form-control" id="myInput" type="text" placeholder="Search..">
-            </div>           
+            </div>
+            <div class="table-detail">
             <table class="product-table">
                 <thead>
                     <tr>
@@ -46,13 +47,23 @@
                     </tr>
                     @endforeach         
                 </tbody>               
-            </table>                   
+            </table> 
+            </div>
+
+                             
         </div>
         <div class="dataProductivity">
+            <div class="dataTitle"><h3>SẢN LƯỢNG</h3></DIV>
             <div class="currentNumber">
-               <p>{{ $deptProductivity }}</p>
+               <p>{{ $completedLot }}</p>
             </div>
-        </div>        
+            <div class="subDetailData">
+                <div class="subDetail hourData"></div>
+                <div class="subDetail forecastData"></div>
+                <div class="subDetail targetData"></div>
+                <div class="subDetail percentTarget"></div>
+            </div>
+        </DI>        
     </div>
     @else
     <p>Không có dữ liệu để hiển thị.</p>

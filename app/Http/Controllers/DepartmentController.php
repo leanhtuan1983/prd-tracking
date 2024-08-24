@@ -15,7 +15,10 @@ class DepartmentController extends Controller
         return view('departments.create');
     }
     public function store(Request $request) {
-        $request->validate(['name'=>'required|string|max:255']);
+        $request->validate([
+            'name'=>'required|string|max:255',
+            'target'=>'required|integer'
+        ]);
         Department::create($request->all());
         return redirect()->route('departments.index')->with('success','Department created successfully!');
     }
@@ -23,7 +26,9 @@ class DepartmentController extends Controller
         return view('departments.edit', compact('department'));
     }
     public function update(Request $request, Department $department) {
-        $request->validate(['name'=>'required|string|max:255']);
+        $request->validate([
+                            'name'=>'required|string|max:255',
+                            'target'=>'required|integer|max:255']);
         $department->update($request->all());
         return redirect()->route('departments.index')->with('success','Department updated successfully!');
     }

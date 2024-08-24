@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('lot_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->integer('quantity');
             $table->foreignId('procedure_id')->constrained()->onDelete('cascade');
             $table->foreignId('process_id')->constrained()->onDelete('cascade');
             $table->foreignId('dept_id')->constrained()->onDelete('cascade');

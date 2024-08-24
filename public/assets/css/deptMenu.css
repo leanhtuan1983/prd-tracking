@@ -1,11 +1,12 @@
 .menuDept {
     display: flex;
-    background: #000;
     color: aliceblue;
     padding-top: 14px;
     padding-bottom: 14px;
     margin-bottom: 20px;
     justify-content: space-evenly;
+    box-shadow: 5px 10px 8px #888888;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
 }
 .menuDept a {
     text-decoration: none;

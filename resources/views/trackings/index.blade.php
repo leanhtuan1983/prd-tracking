@@ -53,6 +53,10 @@
                         <input type="text" name="name" id="name" class="form-control" autocomplete="off" required>
                     </div>
                     <div class="form-group">
+                        <label for="product-name">Lot</label>
+                        <input type="text" name="product-name" id="product-name" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
                         <label for="procedure_id">Procedure</label>
                         <select id="procedure_id" name="procedure_id" class="form-control" required>
                             @foreach($procedures as $procedure)
@@ -69,8 +73,26 @@
             </div>
         </div>
     </div>
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
+    @if(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('error') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
 
 <script>
     new DataTable('#example');
 </script>
+
 @endsection

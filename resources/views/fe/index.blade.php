@@ -8,26 +8,42 @@
      </div>         
     @endforeach
 </div>
-  <table class="product-table">
+<div class="table-container">
+<table class="product-table">
     <thead>
-        <tr>
+        <tr style="text-align: center;">
             <th>Lot</th>
             <th>Product</th>
             <th>Quantity (sheets)</th>
             <th>Procedures</th>
-            <th>Show details</th>
+            <th>Status</th>
+            <th>View details</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($logs as $log )
-        <tr>
+        <tr style="text-align: center;">
             <td>{{$log->name}}</td>
-            <td>{{ $log->logs_product->name}}</td>
-            <td>{{ $log->logs_lot->quantity}}</td>
-            <td>{{ $log->logs_procedure->name}}</td>
+            <td>{{ $log->logs_product->name }}</td>
+            <td>{{ $log->logs_lot->quantity }}</td>
+            <td>{{ $log->logs_procedure->name }}</td>
+            <td><div class="status-element" data-status="{{ $log->status }}">
+                @if ($log->status == 1)
+                    Pending
+                @elseif ($log->status == 3)
+                    Completed
+                @elseif ($log->status >= 1 && $log->status <= 3)
+                    Processing
+                @else
+                    Unknown
+                @endif
+                </div>
+            </td>           
             <td ><a href="{{ route('fe.show',$log->lot_id) }}"><i class="bi bi-eye"></i></a></td>
         </tr>
         @endforeach              
         </tbody>
     </table>
+</div>
+
 @endsection

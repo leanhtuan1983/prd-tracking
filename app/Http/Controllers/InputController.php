@@ -16,6 +16,7 @@ class InputController extends Controller
         $procedures = Procedure::all();
         return view('trackings.index', compact('logs','procedures'));
     } 
+
     public function store(Request $request) {
         $inputLot = $request->input('name'); // Nhập tên lot hàng
         $inputProcedure = $request->input('procedure_id'); // Lựa chọn phương thức
