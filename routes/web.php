@@ -10,6 +10,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\FeController;
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\MenuDeptController;
+use App\Http\Controllers\WorkingTimeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +48,7 @@ Route::get('fe/show/{id}',[FeController::class,'show'])->name('fe.show');
 // Hiển thị cửa sổ các department để theo dõi và cập nhật tiến độ
 Route::get('fe/dept/{id}',[FeController::class,'showDept'])->name('fe.dept');
 Route::post('fe/dept/update/{id}', [FeController::class, 'update'])->name('fe.dept.update');
+
+// Hiển thị cài đặt thời gian làm việc
+Route::get('working_times',[WorkingTimeController::class,'index'])->name('working_time.index');
+Route::put('working_times/update/{id}',[WorkingTimeController::class,'update'])->name('working_time.update');

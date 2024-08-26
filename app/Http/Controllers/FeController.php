@@ -7,6 +7,7 @@ use App\Models\Lot;
 use App\Models\Department;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class FeController extends Controller
 {
@@ -37,17 +38,14 @@ class FeController extends Controller
         ->where('dept_id',$dept_id)
         ->groupBy('lot_id','quantity')
         ->havingRaw('AVG(status_id) = ?', [3])
-        ->sum('quantity');
-        // dd($completedLotID);
-      
-        // $deptProductivity =  Log::where('dept_id',$dept_id)
-        //                     ->where('status_id','3')
-        //                     ->count('quantity');                                                
+        ->sum('quantity');                                                   
                   
          // List danh sách các department theo dạng menu ở mỗi dept
          $subMenu = Department::all();
-        
-        return view('fe.dept.show',compact('deptData','subMenu','completedLot'));
+
+        //  Lấy target của dept
+        $target = Department::where('id',$dept_id)->value('target');    
+        return view('fe.dept.show',compact('deptData','subMenu','completedLot','target'));
    }
    public function update($id) {
         // Cập nhật tạng thái mới của product tại department 

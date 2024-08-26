@@ -8,6 +8,7 @@ body {
 .product-title {
     display: block;
     height: 60px;
+    color: #f4f4f4;
     padding-top: 10px;
     background-image: radial-gradient(
         circle 248px at center,
@@ -124,4 +125,10 @@ body {
 .subDetail {
     background: #007bff;
     height: 100px;
+}
+.targetData {
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 40px;
+    line-height: 1;
 }

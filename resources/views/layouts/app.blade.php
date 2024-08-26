@@ -41,6 +41,9 @@
                             </div>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('working_time.index') }}">Settings</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('tracking.index') }}">Input</a>
                     </li>
                     <li class="nav-item">
@@ -77,6 +80,7 @@
     <script>   
         updateBackgroundColors('status-element');
     </script>
+
 
 
 </body>

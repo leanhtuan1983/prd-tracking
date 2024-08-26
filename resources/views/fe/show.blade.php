@@ -37,7 +37,5 @@
         var totalData = {{ $totalData }};
 </script>
  <!-- Gọi hàm JavaScript để cập nhật màu nền cho tất cả các element có class 'status-element' -->
- <script>   
-    updateBackgroundColors('status-element');
-</script>
+ s
 @endsection
