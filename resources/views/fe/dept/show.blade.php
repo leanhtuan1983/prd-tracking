@@ -53,15 +53,21 @@
                              
         </div>
         <div class="dataProductivity">
-            <div class="dataTitle"><h3>SẢN LƯỢNG(Sheets)</h3></DIV>
+            <div class="dataTitle"><h4>OUTPUT (Sheets)</h4></DIV>
             <div class="currentNumber">
                <p>{{ $completedLot }}</p>
             </div>
             <div class="subDetailData">
-                <div class="subDetail hourData"></div>
-                <div class="subDetail forecastData"></div>
+                <div class="subDetail hourData">
+                    <h6>Efficiency (Sheets/h)</h6>
+                    {{ $efficiency }}
+                </div>
+                <div class="subDetail forecastData">
+                    <h6>Estimated Output (Sheets)</h6>
+                    {{ $estimatedOutput}}
+                </div>
                 <div class="subDetail targetData">
-                     <p>Target</p>
+                     <h6>Target (Sheets)</h6>
                      {{ $target }}
                 </div>
                 <div class="subDetail percentTarget"></div>

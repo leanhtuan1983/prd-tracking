@@ -6,30 +6,22 @@
         display: flex;
         background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
         height: 200px;
+        color: blue;
+        font-size: 80px;
     }
     .start-time, .end-time {
         border: 1px solid white;
         margin: 10px;
-        width: 500px;
-        text-align: center;        
+        width: 800px;
+        text-align: center;              
     }
+
  </style>
 <div class="container">
-      
+@foreach ($workingTimes as $workingTime )    
 <div class="action-btn">
         <a class="btn btn-primary" href="{{ route('fe.index')}}"> Back to Index </a>
-         <!-- Button to Open the Modal -->
- </div>   
-
-@foreach ($workingTimes as $workingTime )
-<div class="working-time">
-    <div class="start-time">
-    <h4>Start</h4>
-    {{ $workingTime -> start_time}}</div>
-    <div class="end-time">
-    <h4>End</h4>
-    {{ $workingTime -> end_time}}</div>
-    <div class="edit-time-btn"><button 
+        <div class="edit-time-btn"><button 
                         type="button" 
                         class="btn btn-primary"
                         data-bs-toggle="modal" 
@@ -40,6 +32,15 @@
                     >
                         Edit
                     </button></div>
+ </div>   
+
+<div class="working-time">
+    <div class="start-time">
+    <h4>Start</h4>
+    {{ $workingTime -> start_time}}</div>
+    <div class="end-time">
+    <h4>End</h4>
+    {{ $workingTime -> end_time}}</div>
 </div>  
 @endforeach   
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
