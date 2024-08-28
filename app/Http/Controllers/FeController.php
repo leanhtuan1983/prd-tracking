@@ -38,7 +38,7 @@ class FeController extends Controller
          $subMenu = Department::all();
 
         // Index các lot và status được input gần nhất tại department được chọn 
-        $deptData = Log::where('dept_id',$dept_id)->get();
+        $deptData = Log::where('dept_id',$dept_id)->orderBy('created_at','desc')->get();
         
         // Lấy thời gian bắt đầu và kêt thúc công việc trong ngày để tính sản lượng
         $workingTime = Working_time::first();
@@ -59,19 +59,26 @@ class FeController extends Controller
         // Lấy số thời gian đã làm việc trong ngày để tính năng suất thực tế theo giờ
         $currentTime = Carbon::now();
         $workedHours = $currentTime->diffInHours($startTime);
+        if($workedHours <= 1) {
         $efficiency = round($completedLot/$workedHours);
+        } else {
+            $efficiency = 0;
+        }
          
         // Lấy tổng thời gian làm việc của 1 ngày và tính toán sản lượng dự kiến
         $start = Carbon::parse($startTime);
         $end = Carbon::parse($endTime);
         $totalMinutes = $end->diffInMinutes($start);
         $totalTime = $totalMinutes/60;
-      
         $estimatedOutput = round($efficiency*$totalTime);
-       
+
         // Lấy target của dept
         $target = Department::where('id',$dept_id)->value('target'); 
-        return view('fe.dept.show',compact('deptData','subMenu','completedLot','efficiency','target','estimatedOutput'));
+
+        // Tính công suất
+        $capacity = round($efficiency/($target/$totalTime)*100);
+
+        return view('fe.dept.show',compact('deptData','subMenu','completedLot','efficiency','target','estimatedOutput','capacity'));
    }
    public function update($id) {
         // Cập nhật tạng thái mới của product tại department 

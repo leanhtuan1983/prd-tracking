@@ -55,7 +55,9 @@
 
         <div id="main">
             <div class="menu-btn">
-                <button class="openbtn" id="openbtn" onclick="openNav()">☰ Open Sidebar</button>
+                <div class="sidebar-menu">
+                <button class="openbtn" id="openbtn" onclick="openNav()">☰ Open Sidebar</button> 
+                </div>       
             </div>
            @yield('content')     
         </div>
@@ -80,8 +82,6 @@
     <script>   
         updateBackgroundColors('status-element');
     </script>
-
-
 
 </body>
 </html>

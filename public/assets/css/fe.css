@@ -81,5 +81,8 @@ body {
 }
 
 .menu-btn {
+    display: flex;
     padding-bottom: 20px;
+    margin: auto;
+    justify-content: space-between;
 }

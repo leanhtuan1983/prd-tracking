@@ -133,7 +133,8 @@ body {
 }
 .targetData,
 .hourData,
-.forecastData {
+.forecastData,
+.percentTarget {
     text-align: center;
     color: #f1f1f1;
     font-size: 30px;

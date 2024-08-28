@@ -59,7 +59,7 @@
             </div>
             <div class="subDetailData">
                 <div class="subDetail hourData">
-                    <h6>Efficiency (Sheets/h)</h6>
+                    <h6>Productivity (Sheets/h)</h6>
                     {{ $efficiency }}
                 </div>
                 <div class="subDetail forecastData">
@@ -70,7 +70,10 @@
                      <h6>Target (Sheets)</h6>
                      {{ $target }}
                 </div>
-                <div class="subDetail percentTarget"></div>
+                <div class="subDetail percentTarget">
+                    <h6>Capacity (%)</h6>
+                    {{ $capacity }}
+                </div>
             </div>
         </DI>        
     </div>
